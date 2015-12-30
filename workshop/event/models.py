@@ -22,7 +22,8 @@ class Event(models.Model):
     name_of_the_contact_person = models.CharField(
         blank=False, null=False, max_length=256)
     phone_number_of_the_contact_person = models.CharField(blank=False, null=False,
-                                                          max_length=100, help_text='Phone Number of the Contact Person')
+                                                          max_length=100,
+                                                          help_text='Phone Number of the Contact Person')
 
     def __str__(self):
         return self.name_of_the_event
