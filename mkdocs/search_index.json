@@ -152,7 +152,7 @@
         },
         {
             "location": "/release_notes/",
-            "text": "Release Notes\n\n\n0.1.0-dev\n\n\nDate:\n 30th December 2015\n\n\nFeatures\n\n\n\n\nGET\n information about the \nEVENTS\n and \nNotification\n w.r.t to a certain events\norganized\n\n\ninitial setup of project.\n\n\n\n\nFixes",
+            "text": "Release Notes\n\n\n[0.1.0-dev]\n\n\nDate:\n 30th December 2015\n\n\nFeatures\n\n\n\n\nGET\n information about the \nEVENTS\n and \nNotification\n w.r.t to a certain events\norganized\n\n\ninitial setup of project.\n\n\n\n\nFixes",
             "title": "Release Notes"
         },
         {
@@ -163,7 +163,7 @@
         {
             "location": "/release_notes/#010-dev",
             "text": "Date:  30th December 2015  Features   GET  information about the  EVENTS  and  Notification  w.r.t to a certain events\norganized  initial setup of project.   Fixes",
-            "title": "0.1.0-dev"
+            "title": "[0.1.0-dev]"
         }
     ]
 }
