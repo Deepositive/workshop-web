@@ -1,7 +1,14 @@
 For api overview and usages, check out [this page](overview.md).
 
-[TOC]
+# GET CALL 
 
-# Authentication
+```/api/events/ ```
 
-TODO
+`Gives the list of all the events.`
+
+# GET CALL 
+
+``` /api/notification/```
+
+`Gives the list of the notification w.r.t to a certain event.`
+

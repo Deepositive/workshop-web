@@ -15,6 +15,7 @@ from django.views import defaults as dj_default_views
 
 # Deepositive Stuff
 from workshop.base import views as base_views
+from workshop.event.api import EventViewSet, NotificationViewSet
 
 from .routers import router
 
@@ -38,6 +39,8 @@ urlpatterns = [
     url(r'^', include("workshop.pages.urls", namespace="pages")),
 
     # Your stuff: custom urls go here
+    url(r'^api/events/$', EventViewSet.as_view(), name='event-view'),
+    url(r'^api/notification/$', NotificationViewSet.as_view(), name='notification-view'),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

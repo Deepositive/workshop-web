@@ -33,35 +33,35 @@ The deployment are managed via travis, but for the first time you'll need to set
 
 ### Heroku
 
-Run these commands to deploy this project on Heroku (substitue all references of `<heroku-app-name>` with the name your heroku application.)
+Run these commands to deploy this project on Heroku 
 
 ```
-heroku create --ssh-git <heroku-app-name>
+heroku create --ssh-git deepositive-workshop
 
-heroku addons:create heroku-postgresql --app=<heroku-app-name>
-heroku pg:backups schedule DATABASE_URL --at '04:00 UTC' --app=<heroku-app-name>
-heroku pg:promote DATABASE_URL --app=<heroku-app-name>
+heroku addons:create heroku-postgresql --app=deepositive-workshop
+heroku pg:backups schedule DATABASE_URL --at '04:00 UTC' --app=deepositive-workshop
+heroku pg:promote DATABASE_URL --app=deepositive-workshop
 
-heroku addons:create mailgun --app=<heroku-app-name>
+heroku addons:create mailgun --app=deepositive-workshop
 heroku config:set EMAIL_HOST="\$MAILGUN_SMTP_SERVER" \
                   EMAIL_HOST_USER="\$MAILGUN_SMTP_LOGIN" \
-                  EMAIL_HOST_PASSWORD="\$MAILGUN_SMTP_PASSWORD" --app=<heroku-app-name>
+                  EMAIL_HOST_PASSWORD="\$MAILGUN_SMTP_PASSWORD" --app=deepositive-workshop
 
-heroku addons:create redistogo --app=<heroku-app-name>
-heroku addons:create redismonitor --url `heroku config:get REDISTOGO_URL --app=<heroku-app-name>` --app=<heroku-app-name>
+heroku addons:create redistogo --app=deepositive-workshop
+heroku addons:create redismonitor --url `heroku config:get REDISTOGO_URL --app=deepositive-workshop` --app=deepositive-workshop
 
-heroku addons:create newrelic --app=<heroku-app-name>
-heroku config:set NEW_RELIC_APP_NAME=<new-relic-app-name> --app=<heroku-app-name>
+heroku addons:create newrelic --app=deepositive-workshop
+heroku config:set NEW_RELIC_APP_NAME=<new-relic-app-name> --app=deepositive-workshop
 
 heroku config:set DJANGO_SETTINGS_MODULE='settings.production' \
 DJANGO_SECRET_KEY=`openssl rand -base64 32` \
-SITE_DOMAIN=<heroku-app-name>.herokuapp.com \
+SITE_DOMAIN=deepositive-workshop.herokuapp.com \
 SITE_SCHEME=https \
-SITE_NAME=DJANGO_SITE_NAME_HERE --app=<heroku-app-name>
+SITE_NAME=DJANGO_SITE_NAME_HERE --app=deepositive-workshop
 
 git push heroku master
-heroku run python manage.py createsuperuser --app=<heroku-app-name>
-heroku open --app=<heroku-app-name>
+heroku run python manage.py createsuperuser --app=deepositive-workshop
+heroku open --app=deepositive-workshop
 ```
 
 The following configuration doesn't allow you to "by default" upload the media on the heroku server as heroku does
@@ -79,8 +79,8 @@ DJANGO_AWS_STORAGE_BUCKET_NAME=<YOUR_BUCKET_NAME_HERE>
 
 
 **Note:**
-- Use `--app=<heroku-app-name>` if you have more than one heroku app configured in current project.
-- Update `travis.yml`, and add the `<heroku-app-name>` to automatically deploy to this configured heroku app.
+- Use `--app=deepositive-workshop` if you have more than one heroku app configured in current project.
+- Update `travis.yml`, and add the `deepositive-workshop` to automatically deploy to this configured heroku app.
 
 ### AWS/EC2
 

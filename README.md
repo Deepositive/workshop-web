@@ -66,4 +66,3 @@ Refer to [CONTRIBUTING.md][contributing]
 [contributing]: http://github.com/aniketmaithani/workshop-web/tree/master/CONTRIBUTING.md
 
 --------
-Built with ♥ at [Fueled](http://fueled.com)

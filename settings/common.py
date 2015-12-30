@@ -20,8 +20,10 @@ env = environ.Env()
 # MANAGER CONFIGURATION
 # ------------------------------------------------------------------------------
 # People who get code error notifications.
-# In the format 'Full Name <email@example.com>, Full Name <anotheremail@example.com>'
-ADMINS = getaddresses([env("DJANGO_ADMINS", default='Deepositive Admin <admin@example.com>')])
+# In the format 'Full Name <email@example.com>, Full Name
+# <anotheremail@example.com>'
+ADMINS = getaddresses(
+    [env("DJANGO_ADMINS", default='Deepositive Admin <admin@example.com>')])
 
 # Not-necessarily-technical managers of the site. They get broken link
 # notifications and other various emails.
@@ -44,6 +46,7 @@ INSTALLED_APPS = (
     'workshop.base',
     'workshop.users',
     'workshop.pages',
+    'workshop.event',  # Event App
 
     'rest_framework',  # http://www.django-rest-framework.org/
     'versatileimagefield',  # https://github.com/WGBH/django-versatileimagefield/
@@ -155,7 +158,8 @@ USE_I18N = True
 USE_L10N = True
 
 # The list of directories to search for fixtures
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-FIXTURE_DIRS
+# See:
+# https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-FIXTURE_DIRS
 FIXTURE_DIRS = (
     str(APPS_DIR.path('fixtures')),
 )
@@ -181,7 +185,7 @@ EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND',
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
-    'default': env.db("DATABASE_URL", default="postgres://localhost/workshop"),
+    'default': env.db("DATABASE_URL", default="postgres://aniketmaithani:aniketmaithani@localhost/workshop"),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
@@ -200,7 +204,8 @@ TEMPLATES = [
                 'django.template.loaders.filesystem.Loader',
                 'django.template.loaders.app_directories.Loader',
             ],
-            # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
+            # See:
+            # https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',
                 'django.template.context_processors.debug',
@@ -259,7 +264,8 @@ AUTOSLUG_SLUGIFY_FUNCTION = "slugify.slugify"
 #  SECURITY
 # -----------------------------------------------------------------------------
 CSRF_COOKIE_HTTPONLY = False  # Allow javascripts to read CSRF token from cookies
-SESSION_COOKIE_HTTPONLY = True  # Do not allow Session cookies to be read by javascript
+# Do not allow Session cookies to be read by javascript
+SESSION_COOKIE_HTTPONLY = True
 
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_BROWSER_XSS_FILTER = True
