@@ -3,7 +3,7 @@
 # @Author: Aniket Maithani
 # @Date:   2015-12-30 13:08:17
 # @Last Modified by:   Aniket Maithani
-# @Last Modified time: 2015-12-30 13:17:37
+# @Last Modified time: 2015-12-30 16:50:50
 from __future__ import unicode_literals
 from django.core.urlresolvers import reverse
 
