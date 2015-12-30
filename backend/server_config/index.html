@@ -211,7 +211,7 @@ heroku addons:create redistogo --app=deepositive-workshop
 heroku addons:create redismonitor --url `heroku config:get REDISTOGO_URL --app=deepositive-workshop` --app=deepositive-workshop
 
 heroku addons:create newrelic --app=deepositive-workshop
-heroku config:set NEW_RELIC_APP_NAME=&lt;new-relic-app-name&gt; --app=deepositive-workshop
+heroku config:set NEW_RELIC_APP_NAME=deepositive-w --app=deepositive-workshop
 
 heroku config:set DJANGO_SETTINGS_MODULE='settings.production' \
 DJANGO_SECRET_KEY=`openssl rand -base64 32` \

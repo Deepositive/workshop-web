@@ -159,10 +159,10 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#get-call">GET CALL</a></li>
+        <li class="main active"><a href="#get-apievents">GET /api/events/</a></li>
         
     
-        <li class="main "><a href="#get-call_1">GET CALL</a></li>
+        <li class="main "><a href="#get-apinotification">GET /api/notification/</a></li>
         
     
     </ul>
@@ -170,12 +170,127 @@
                 <div class="col-md-9" role="main">
 
 <p>For api overview and usages, check out <a href="../overview/">this page</a>.</p>
-<h2 id="get-call">GET CALL</h2>
-<p><code>/api/events/</code></p>
+<h2 id="get-apievents">GET <code>/api/events/</code></h2>
 <p>Gives the list of all the events.</p>
-<h2 id="get-call_1">GET CALL</h2>
-<p><code>/api/notification/</code></p>
-<p>Gives the list of the notification w.r.t to a certain event.</p></div>
+<p><code>Status Code : 200 OK</code></p>
+<pre><code>{
+    &quot;links&quot;: {
+        &quot;first&quot;: &quot;http://127.0.0.1:8000/api/events/?page=1&quot;,
+        &quot;last&quot;: &quot;http://127.0.0.1:8000/api/events/?page=1&quot;,
+        &quot;next&quot;: null,
+        &quot;prev&quot;: null
+    },
+    &quot;data&quot;: {
+        &quot;links&quot;: {
+            &quot;first&quot;: &quot;http://127.0.0.1:8000/api/events/?page=1&quot;,
+            &quot;last&quot;: &quot;http://127.0.0.1:8000/api/events/?page=1&quot;,
+            &quot;next&quot;: null,
+            &quot;prev&quot;: null
+        },
+        &quot;meta&quot;: {
+            &quot;pagination&quot;: {
+                &quot;page&quot;: 1,
+                &quot;pages&quot;: 1,
+                &quot;count&quot;: 2
+            }
+        },
+        &quot;results&quot;: [
+            {
+                &quot;name_of_the_event&quot;: &quot;Tokens Of Love&quot;,
+                &quot;photo_of_the_area&quot;: null,
+                &quot;description_of_the_event&quot;: &quot;Aisi&quot;,
+                &quot;location&quot;: &quot;&quot;,
+                &quot;name_of_the_contact_person&quot;: &quot;Preksha/Deepanjali&quot;,
+                &quot;phone_number_of_the_contact_person&quot;: &quot;120938012&quot;
+            },
+            {
+                &quot;name_of_the_event&quot;: &quot;Test Event&quot;,
+                &quot;photo_of_the_area&quot;: null,
+                &quot;description_of_the_event&quot;: &quot;sasdf&quot;,
+                &quot;location&quot;: &quot;asdfsda&quot;,
+                &quot;name_of_the_contact_person&quot;: &quot;asdfasd&quot;,
+                &quot;phone_number_of_the_contact_person&quot;: &quot;asdfasdf&quot;
+            }
+        ]
+    },
+    &quot;meta&quot;: {
+        &quot;pagination&quot;: {
+            &quot;page&quot;: 1,
+            &quot;pages&quot;: 1,
+            &quot;count&quot;: 2
+        }
+    }
+}
+</code></pre>
+
+<h2 id="get-apinotification">GET <code>/api/notification/</code></h2>
+<p>Gives the list of the notification w.r.t to events.</p>
+<p><code>Status Code : 200 OK</code></p>
+<pre><code>    &quot;links&quot;: {
+        &quot;first&quot;: &quot;http://127.0.0.1:8000/api/notification/?page=1&quot;,
+        &quot;last&quot;: &quot;http://127.0.0.1:8000/api/notification/?page=1&quot;,
+        &quot;next&quot;: null,
+        &quot;prev&quot;: null
+    },
+    &quot;data&quot;: {
+        &quot;links&quot;: {
+            &quot;first&quot;: &quot;http://127.0.0.1:8000/api/notification/?page=1&quot;,
+            &quot;last&quot;: &quot;http://127.0.0.1:8000/api/notification/?page=1&quot;,
+            &quot;next&quot;: null,
+            &quot;prev&quot;: null
+        },
+        &quot;meta&quot;: {
+            &quot;pagination&quot;: {
+                &quot;page&quot;: 1,
+                &quot;pages&quot;: 1,
+                &quot;count&quot;: 3
+            }
+        },
+        &quot;results&quot;: [
+            {
+                &quot;event&quot;: {
+                    &quot;name_of_the_event&quot;: &quot;Test Event&quot;,
+                    &quot;photo_of_the_area&quot;: null,
+                    &quot;description_of_the_event&quot;: &quot;sasdf&quot;,
+                    &quot;location&quot;: &quot;asdfsda&quot;,
+                    &quot;name_of_the_contact_person&quot;: &quot;asdfasd&quot;,
+                    &quot;phone_number_of_the_contact_person&quot;: &quot;asdfasdf&quot;
+                },
+                &quot;notification_text&quot;: &quot;sadasd&quot;
+            },
+            {
+                &quot;event&quot;: {
+                    &quot;name_of_the_event&quot;: &quot;Tokens Of Love&quot;,
+                    &quot;photo_of_the_area&quot;: null,
+                    &quot;description_of_the_event&quot;: &quot;Aisi&quot;,
+                    &quot;location&quot;: &quot;Preksha&quot;,
+                    &quot;name_of_the_contact_person&quot;: &quot;Preksha/Deepanjali&quot;,
+                    &quot;phone_number_of_the_contact_person&quot;: &quot;120938012&quot;
+                },
+                &quot;notification_text&quot;: &quot;Huuray&quot;
+            },
+            {
+                &quot;event&quot;: {
+                    &quot;name_of_the_event&quot;: &quot;Tokens Of Love&quot;,
+                    &quot;photo_of_the_area&quot;: null,
+                    &quot;description_of_the_event&quot;: &quot;Aisi&quot;,
+                    &quot;location&quot;: &quot;Preksha&quot;,
+                    &quot;name_of_the_contact_person&quot;: &quot;Preksha/Deepanjali&quot;,
+                    &quot;phone_number_of_the_contact_person&quot;: &quot;120938012&quot;
+                },
+                &quot;notification_text&quot;: &quot;sdasdasd&quot;
+            }
+        ]
+    },
+    &quot;meta&quot;: {
+        &quot;pagination&quot;: {
+            &quot;page&quot;: 1,
+            &quot;pages&quot;: 1,
+            &quot;count&quot;: 3
+        }
+    }
+}
+</code></pre></div>
             
         </div>
 
