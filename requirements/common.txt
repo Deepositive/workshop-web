@@ -24,3 +24,7 @@ django-versatileimagefield==1.2
 # REST APIs
 # -------------------------------------
 djangorestframework==3.3.2
+
+# Utilities
+# -------------------------------------
+django-extensions==1.6.1  # for shell_plus and other utils
