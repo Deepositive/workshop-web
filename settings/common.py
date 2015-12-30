@@ -72,6 +72,22 @@ REST_FRAMEWORK = {
     'DEFAULT_VERSION': '1.0',
     'ALLOWED_VERSIONS': ['1.0', ],
     'VERSION_PARAMETER': 'version',
+    'PAGE_SIZE': 10,
+    'PAGINATE_BY': 10,
+    'PAGINATE_BY_PARAM': 'page_size',
+    'MAX_PAGINATE_BY': 100,
+    # DRF v3.1+
+    'DEFAULT_PAGINATION_CLASS':
+        'rest_framework_json_api.pagination.PageNumberPagination',
+    'DEFAULT_PARSER_CLASSES': (
+        'rest_framework_json_api.parsers.JSONParser',
+        'rest_framework.parsers.FormParser',
+        'rest_framework.parsers.MultiPartParser'
+    ),
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework_json_api.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ),
 
     # Use hyperlinked styles by default.
     # Only used if the `serializer_class` attribute is not set on a view.
