@@ -1,0 +1,6 @@
+---
+project_name: workshop
+project_repo_url: git@github.com:aniketmaithani/workshop-web.git
+project_repo_remote: origin
+domain_name: workshop.com
+repo_version: master
