@@ -1,5 +1,6 @@
 Deepositive
 ==============================
+[![Build Status](https://travis-ci.org/Deepositive/workshop-web.svg)](https://travis-ci.org/Deepositive/workshop-web)
 
 __Version:__ 0.1.0-dev
 
